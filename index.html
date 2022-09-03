@@ -49,6 +49,8 @@ if (navigator.platform.indexOf("Mac") != -1) {
 var type = "MacOS";
 } else if (navigator.platform.indexOf("Win") != -1) {
 var type = "Windows";
+} else {
+var type = navigator.platform;
 }
 document.getElementById("computer").innerHTML = "for " + type;
 </script>
