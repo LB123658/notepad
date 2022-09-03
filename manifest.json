@@ -1,6 +1,6 @@
 {
 	"name":"Notepad",
-	"short_name":"🔋😀🥞🚙🐰🧊☕️🔥",
+	"short_name":"Notepad",
 	"start_url":"index.html",
 	"display":"standalone",
 	"background_color":"black",
