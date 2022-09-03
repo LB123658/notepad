@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Notepad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<style>
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: black;
+  font-family: arial;
+  color: white;
+  overflow: hidden;
+}
+::selection {
+  background: red;
+  color: black;
+}
+textarea {
+  position: fixed;
+  top: 2%;
+  left: 2%;
+  width: 96%;
+  height: 96%;
+  border: none;
+  color: white;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  resize: none;
+  font-family: 'Lato', sans-serif;
+}
+textarea::placeholder {
+  color: red;
+}
+</style>
+</head>
+<body>
+<textarea placeholder="Welcome to NOTEPAD." onkeyup="what()" id="t"></textarea>
+
+<script>
+var t = document.getElementById("t");
+var journal = localStorage.getItem("journal");
+
+if (journal.length > 0) {
+  t.value = journal + "\n\n -----------\n";
+} else {
+  t.value = "";
+}
+
+function what() {
+localStorage.setItem("journal",t.value);
+console.log("Saved...");
+}
+
+if (navigator.platform == "Android") {
+t.style.fontSize = "50px";
+} else if (navigator.platform == "iPhone") {
+t.style.fontSize = "50px";
+}
+
+t.scrollTop = t.scrollHeight;
+
+
+// pwa part
+	window.addEventListener('load', () => {
+	registerSW();
+	});
+
+	// Register the Service Worker
+	async function registerSW() {
+	if ('serviceWorker' in navigator) {
+		try {
+		await navigator
+				.serviceWorker
+				.register('serviceworker.js');
+		}
+		catch (e) {
+		console.log('SW registration failed');
+		}
+	}
+	}
+</script>
+</body>
+</html>
