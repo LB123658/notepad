@@ -46,7 +46,7 @@ textarea::placeholder {
 var t = document.getElementById("t");
 var journal = localStorage.getItem("journal");
 
-if (journal.length > 0) {
+if (journal) {
   t.value = journal + "\n\n -----------\n";
 } else {
   t.value = "";
