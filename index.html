@@ -44,6 +44,26 @@ textarea::placeholder {
 <textarea placeholder="Welcome to NOTEPAD." onkeyup="what()" id="t"></textarea>
 
 <script>
+// pwa part
+	window.addEventListener('load', () => {
+	registerSW();
+	});
+
+	// Register the Service Worker
+	async function registerSW() {
+	if ('serviceWorker' in navigator) {
+		try {
+		await navigator
+				.serviceWorker
+				.register('serviceworker.js');
+		}
+		catch (e) {
+		console.log('SW registration failed');
+		}
+	}
+	}
+	
+//rest of js
 var t = document.getElementById("t");
 var journal = localStorage.getItem("journal");
 
@@ -66,25 +86,6 @@ t.style.fontSize = "50px";
 
 t.scrollTop = t.scrollHeight;
 t.focus();
-
-// pwa part
-	window.addEventListener('load', () => {
-	registerSW();
-	});
-
-	// Register the Service Worker
-	async function registerSW() {
-	if ('serviceWorker' in navigator) {
-		try {
-		await navigator
-				.serviceWorker
-				.register('serviceworker.js');
-		}
-		catch (e) {
-		console.log('SW registration failed');
-		}
-	}
-	}
 </script>
 </body>
 </html>
