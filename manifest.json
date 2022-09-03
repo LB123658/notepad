@@ -1,7 +1,7 @@
 {
 	"name":"Notepad",
 	"short_name":"Notepad",
-	"start_url":"loading.html",
+	"start_url":"index.html",
 	"display":"standalone",
 	"background_color":"black",
 	"theme_color":"black",
