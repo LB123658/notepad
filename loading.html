@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Notepad, loading...</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/icon-192x192.png" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<style>
+body {
+  text-align: center;
+  font-size: 120px;
+  user-select: none;
+  -webkit-user-select: none;
+  color: white;
+  font-family: 'Lato', sans-serif;;
+  overflow: hidden;
+  background: black;
+}
+p {
+  height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0px;
+  text-align: center;
+  animation: fade 1.7s;
+  transition: top 2.4s;
+  line-height: 0.5;
+}
+span {
+  color: orange;
+}
+@keyframes fade {
+  0% {opacity:0;}
+  100% {opacity: 1;}
+}
+</style>
+</head>
+<body>
+<p>Notepad<span>.</span><br><span style="font-size:40px;color:white;" id="computer"></span></p>
+<script>
+setTimeout(function(){document.getElementsByTagName("p")[0].style.top = "200%";},2000);
+setTimeout(function(){location.replace("index.html");},3500);
+
+if (navigator.platform.indexOf("Mac") != -1) {
+var type = "MacOS";
+} else if (navigator.platform.indexOf("Win") != -1) {
+var type = "Windows";
+}
+document.getElementById("computer").innerHTML = "for " + type;
+</script>
+</body>
+</html>
