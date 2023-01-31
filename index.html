@@ -49,6 +49,8 @@ if (navigator.platform.indexOf("Mac") != -1) {
 var type = "MacOS";
 } else if (navigator.platform.indexOf("Win") != -1) {
 var type = "Windows";
+} else if (navigator.userAgent.indexOf("CrOS") > -1) {
+var type = "ChromeOS";
 } else {
 var type = navigator.platform;
 }
