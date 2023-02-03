@@ -1,12 +1,12 @@
 {
 	"name":"Notepad",
 	"short_name":"Notepad",
-	"start_url":"index.html",
+	"start_url":"../index.html",
 	"display":"standalone",
 	"background_color":"black",
-	"theme_color":"black",
+	"theme_color":"#f9710d",
 	"scope": ".",
-	"description":"Your digital notepad.",
+	"description":"A digital notepad.",
 	"icons":[
 	{
 	"src":"images/icon-192x192.png",					
