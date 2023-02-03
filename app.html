@@ -67,6 +67,11 @@ textarea::placeholder {
 var t = document.getElementById("t");
 var journal = localStorage.getItem("journal");
 
+//load correct app logo for chromebooks
+if (navigator.userAgent.indexOf("CrOS") > -1) {
+document.getElementById("manifest").href = "chrome/manifest.json";
+}
+	
 function what() {
 localStorage.setItem("journal",t.value);
 console.log("Saved...");
@@ -78,9 +83,6 @@ t.style.fontSize = "50px";
 t.style.fontSize = "50px";
 }
 
-t.scrollTop = t.scrollHeight;
-t.focus();
-	
 //show date and time
 //date and time variables
 const d = new Date();
@@ -116,11 +118,9 @@ if (journal) {
 } else if (journal === false) {
     t.value = "";
 } 
-
-//load correct app logo for chromebooks
-if (navigator.userAgent.indexOf("CrOS") > -1) {
-document.getElementById("manifest").href = "chrome/manifest.json";
-}
+//scroll to end
+t.scrollTop = t.scrollHeight;
+t.focus();
 </script>
 </body>
 </html>
