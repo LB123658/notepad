@@ -1,6 +1,6 @@
 # Notepad
 A digital notepad
-```
+```js
 //embed a notepad 
 function loadNotepadEmbed(elementToEmbedNotepadIn,embedMargin,embedWidth) {
   var notepadEmbed = document.createElement("iframe");
