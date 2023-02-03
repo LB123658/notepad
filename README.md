@@ -1,5 +1,17 @@
 # Notepad
 A digital notepad
 ```
-<iframe src="https://lb123658.github.io/notepad" style="border-radius: 12px;width:100%;height:250px;border:none;"></iframe>
+//embed a notepad 
+function loadNotepadEmbed(elementToEmbedNotepadIn,embedMargin,embedWidth) {
+  var notepadEmbed = document.createElement("iframe");
+  notepadEmbed.style.width = embedWidth;
+  notepadEmbed.style.height = "360px";
+  notepadEmbed.style.margin = embedMargin;
+  notepadEmbed.style.border = "none";
+  notepadEmbed.style.borderRadius = "5px;
+  //element id is "notepad-embed"
+  notepadEmbed.id = "notepad-embed";
+  //embed notepad in selected element
+  elementToEmbedNotepadIn.appendChild(notepadEmbed);
+}
 ```
