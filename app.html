@@ -108,7 +108,7 @@ if (d.getHours() > 12) {
 //create timestamp
 //make dotted line the same length as the timestamp text
 timestamp = adjustedHours + ":" + adjustedMinutes + " " + ampm + " - " + dayy[d.getDay()] + ", " + m[d.getMonth()] + " " + d.getDate();
-dottedLine = dottedLine.slice(0,Math.round(timestamp.length * 0.62));
+dottedLine = dottedLine.slice(0,Math.round(timestamp.length * 1.62));
 //if journal has been stored, load the text followed by the date and time header
 //if there is no saved text, leave page blank
 if (journal) {
