@@ -9,9 +9,9 @@ function loadNotepadEmbed(elementToEmbedNotepadIn,embedMargin,embedWidth) {
   notepadEmbed.style.margin = embedMargin;
   notepadEmbed.style.border = "none";
   notepadEmbed.style.borderRadius = "5px;
-    //element id is 'notepad-embed'
   notepadEmbed.id = "notepad-embed";
-    //embed notepad in selected element
+  
+  //embed notepad in selected element
   elementToEmbedNotepadIn.appendChild(notepadEmbed);
 }
 ```
