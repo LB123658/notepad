@@ -71,7 +71,12 @@ var journal = localStorage.getItem("journal");
 if (navigator.userAgent.indexOf("CrOS") > -1) {
 document.getElementById("manifest").href = "chrome/manifest.json";
 }
-	
+if (navigator.platform === "iPhone") {
+document.getElementById("manifest").href = "mobile/manifest.json";
+} else if (navigator.platform === "Android") {
+document.getElementById("manifest").href = "mobile/manifest.json";
+}
+
 function what() {
 localStorage.setItem("journal",t.value);
 console.log("Saved...");
